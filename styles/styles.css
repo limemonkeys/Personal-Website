@@ -1,8 +1,16 @@
-body {
-    background-color: #6394C5;
-    font-family: "Fredoka One", sans-serif;
-}
+/*
+Filename: styles.css
+Author: Mac Burton
+Start Date: 16 Sept '23
+Summary:
+    This stylesheet used for styling each of the pages for this website. 
+    There are comments grouping related stylings together.
+*/
 
+/*
+Section: Rows and Columns
+Relevancy: All pages
+*/
 .row {
     display: flex;
 }
@@ -38,14 +46,50 @@ body {
 }
 
 
+/*
+Section: General Stylings
+Relevancy: All
+*/
 
-.logos{
+/* Class to center text. Typically used on 1-2 sentence paragraphs */
+.text-center{
+    text-align: center;
+}
+
+
+/*
+Section: Navbar
+Relevancy: All pages
+*/
+
+#nav-name{
+    color: #EDF5E1;
+    background-color: #05386B;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 25px;
+    font-size: 100px;
+    margin: 0;
+}
+
+#nav-links{
+    color: #EDF5E1;
+    background-color: #05386B;
+    text-align: center;
+    height: 75px;
+    border-radius: 25px;
+    margin-top: 10px;
+    padding: 0px;
+}
+
+.nav-logos{
     padding-top: 10px;
     height: 50px;
     width: auto;
 }
 
-.navbox{
+.nav-page{
     color: #EDF5E1;
     background-color: #05386B;
     text-align: center;
@@ -56,6 +100,77 @@ body {
     padding-top: 17px;
     margin-top: 10px;
 }
+
+/*
+Section: Background
+Relevancy: All
+*/
+
+body {
+    background-color: #6394C5;
+    font-family: "Fredoka One", sans-serif;
+}
+
+
+/*
+Section: Main
+Relevancy: All
+*/
+
+.main{
+    color: #EDF5E1;
+    text-align: center;
+    height: 500px; 
+    border-radius: 25px;
+    height: auto;
+    margin-bottom: 65px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.border{
+    border: 16px ridge #05386B;
+    background-color: #054b92;
+    border-radius: 25px;
+}
+
+
+/*
+Section: Footer
+Relevancy: All
+*/
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #001b36;
+    color: white; /*TODO: Update to off-white*/
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+#character{
+    transform: scale(1);
+    margin-top: 8px;
+}
+
+#character-space{
+    
+}
+
+
+
 
 
 
@@ -70,64 +185,20 @@ body {
 }
 
 
-#name{
-    color: #EDF5E1;
-    background-color: #05386B;
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    border-radius: 25px;
-    font-size: 100px;
-    margin: 0;
-}
 
-#links{
-    color: #EDF5E1;
-    background-color: #05386B;
-    text-align: center;
-    height: 75px;
-    border-radius: 25px;
-    margin-top: 10px;
-    padding: 0px;
-}
 
-#opener{
-    color: #EDF5E1;
-    
-    text-align: center;
-    height: 500px; 
-    border-radius: 25px;
-    height: auto;
-    margin-bottom: 65px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    
-}
 
-#portfolio-opener{
-    
-    color: #EDF5E1;
-    
-    text-align: center;
-    height: 500px; 
-    border-radius: 25px;
-    height: auto;
-    margin-bottom: 65px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    
-}
+
+
+
+
 
 .portfolioPics{
 
     border: 6px solid #05386B;
 }
 
-#border{
-    background-color: #054b92;
-    border-radius: 25px;
-    border: 16px ridge #05386B;
-}
+
 
 
 
@@ -145,17 +216,7 @@ body {
 }
 
 
-.footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    background-color: #001b36;
-    color: white;
-    text-align: center;
-}
+
 
 .text{
 
@@ -166,13 +227,7 @@ body {
 }
 
 
-.text-center{
 
-    padding-left: 25%;
-    padding-right: 25%;
-    text-align: center;
-
-}
 
 
 .text-space{
@@ -419,3 +474,4 @@ body {
 .float-text-left{
     text-align: left;
 }
+

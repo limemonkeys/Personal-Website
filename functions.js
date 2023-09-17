@@ -269,3 +269,4 @@ function closeOverlayBoatleRoyale() {
 function closeOverlayDalhousieFitnessHallApplication() {
   document.getElementById("DalhousieFitnessHallApplication").style.display = "none";
 }
+
