@@ -24,12 +24,14 @@
             right = true;
             moveSpeed = 8;
             wait = true;
-            trigger = 0;
+            trigger = false;
             
             timerId = setInterval( function() { //This function is called by the browser every 33 milliseconds
                 
                 var width = document.getElementById('nav-name').offsetWidth - 64;
 
+                if (!trigger)
+                    document.getElementById('nav-name').innerHTML = guy.style.left + "\n" + width;
                 
                 if (wait){
                     document.getElementById('character').src = "./Images/Character/M0.png";
@@ -67,6 +69,17 @@
                         guy.style.left = left + "px";
                 }
                 else{
+                    
+                    if(left > width) { 
+
+                        trigger = true;
+                        document.getElementById('nav-name').innerHTML = guy.style.left + "\n" + width + "BANG";
+                        //clearInterval( timerId ); //Stop the interval because left is > 200
+                        document.getElementById('character').style.transform = "scaleX(-1)";
+                        left= document.getElementById("nav-name").offsetWidth - 64;
+                        right = false;
+                    }
+
                     left -= moveSpeed;
                     if( left < 8) {
                         
@@ -76,6 +89,8 @@
                         right = true;
                         wait = true;
                     }
+                    
+
 
 
                     counter++;
