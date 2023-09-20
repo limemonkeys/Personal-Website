@@ -89,29 +89,31 @@
                         else{
                         //document.getElementById('nav-name').innerHTML = document.getElementById('body').scrollHeight - parseInt(document.getElementById('corpse' + score).style.top) + "\n" + document.getElementsByClassName('footer')[0].offsetHeight;
                             
-                            if (parseInt(document.getElementById('corpse' + score).style.top) - (document.getElementById('corpse' + score).style.height - document.getElementsByClassName('footer')[0].offsetHeight)  < document.getElementById('body').scrollHeight){
+                            if (parseInt(document.getElementById('corpse' + score).style.top) < document.getElementById('body').scrollHeight - document.getElementsByClassName('footer')[0].offsetHeight){
                                 //document.getElementById('nav-name').innerHTML = document.getElementById('body').scrollHeight - parseInt(document.getElementById('corpse' + score).style.top) + "\n" + document.getElementsByClassName('footer')[0].offsetHeight;
                                 //document.getElementById('nav-name').innerHTML = document.getElementById('corpse' + score).style.left + 10;
                                 //document.getElementById('nav-name').innerHTML = document.getElementById('corpse' + score).style.top + "<" + document.getElementById('body').scrollHeight;
-                                document.getElementById('nav-name').innerHTML = "2";
+                                //document.getElementById('nav-name').innerHTML = "2";
                                 if (!permaWait && !wait){
                                     document.getElementById('corpse' + score).style.left =  guy.style.left = left + "px";
                                 }
                                 else{
                                     permaWait = true;
                                 }
-                                
-                                document.getElementById('corpse' + score).style.top = (fallingCounter * fallingCounter)+ "px";
-                                
-                                
+                                document.getElementById('nav-name').innerHTML = fallingCounter * fallingCounter + "\n" + document.getElementById('body').scrollHeight
+                                if (fallingCounter * fallingCounter > document.getElementById('body').scrollHeight - document.getElementsByClassName('footer')[0].offsetHeight){
+                                    //document.getElementById('nav-name').innerHTML = document.getElementById('corpse' + score).clientHeight / 2;
+                                    fallingCounter = 0;
+                                    falling = false;
+                                    permaWait = false;
+                                    firstCycle = true;
+                                    document.getElementById('corpse' + score).style.top = document.getElementById('body').scrollHeight - document.getElementsByClassName('footer')[0].offsetHeight + "px";
+                                }
+                                else{
+                                    document.getElementById('corpse' + score).style.top = (fallingCounter * fallingCounter)+ "px";
+                                }  
                             }
-                            else{
-                                fallingCounter = 0;
-                                falling = false;
-                                permaWait = false;
-                                firstCycle = true;
-                            }
-                            document.getElementById('nav-name').innerHTML = document.getElementById('corpse' + score).style.top + "\n" + document.getElementById('body').scrollHeight;
+                            //document.getElementById('nav-name').innerHTML = document.getElementById('corpse' + score).style.top + "\n" + document.getElementById('body').scrollHeight;
                         }
                     //}
                     
