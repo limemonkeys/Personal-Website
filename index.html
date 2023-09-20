@@ -9,14 +9,20 @@
         <script src="jquery-3.6.4.min.js"></script>
         <script src="functions.js"></script>
     </head>
-    <body>
-        <img id="character" style="position:absolute;" src="./Images/Character/M0.png" onclick="updateScore()" >
-        <img id="character-space" style="visibility: hidden;" src="./Images/Character/M0.png">
+    <body id="body">
+        <img id="character" style="position:absolute;" src="./Images/Character/M0.png" onclick="GFG_Fun()" >
+        <div id="deathSpawner" style="position:absolute;">
+            
+        </div>
+        <div id="deathSpace" style="position:absolute;">
+            
+        </div>
+        <img id="character-space" style="visibility: hidden;" src="./Images/Character/M0.png" onclick="GFG_Fun()">
         <script type="text/javascript">
             document.getElementById('character').style.transform = "scale(1)";
 
             var left = 0;
-            guy = document.getElementById('character'),
+            guy = document.getElementById('character');
             timerId = 0;
             counter = 0;
             deathCounter = 0;
@@ -28,6 +34,11 @@
             wait = true;
             death = false;
             opacityFade = false;
+            score = 0;
+            falling = false;
+            fallingCounter = 0;
+            permaWait = false;
+            firstCycle = true;
             
             //Temp vars
             trigger = false;
@@ -36,11 +47,15 @@
                 
                 var width = document.getElementById('nav-name').offsetWidth - 64;
 
-                /*
-                if (!trigger)
-                    document.getElementById('nav-name').innerHTML = guy.style.left + "\n" + width;
-                */
-
+                                
+                //document.getElementById('nav-name').innerHTML = guy.style.left + "\n" + width;
+                //document.getElementById('nav-name').innerHTML = document.getElementById('body').scrollHeight + "\n" + document.getElementsByClassName('footer')[0].offsetHeight;
+                if (document.getElementById('corpse' + score) != null){
+                    //document.getElementById('nav-name').innerHTML = typeof document.getElementById('body').scrollHeight + "\n" + typeof parseInt(document.getElementById('corpse' + score).style.top) + "\n" + typeof document.getElementsByClassName('footer')[0].offsetHeight;
+                    //document.getElementById('nav-name').innerHTML = document.getElementById('body').scrollHeight - parseInt(document.getElementById('corpse' + score).style.top) + "\n" + document.getElementsByClassName('footer')[0].offsetHeight;
+                }
+                
+                
                 if (death){
                     deathCounter++;
                     if (deathCounter > 32){
@@ -51,6 +66,57 @@
                         opacityFade = true;
                     }
                 }
+
+                if (falling){
+                    fallingCounter++;
+
+                    //if (fallingCounter < 32){
+
+                        
+                    // This can probably be improved on
+                    //if (fallingCounter < 32){
+                        //document.getElementById('nav-name').innerHTML = parseInt(document.getElementById('corpse' + score).style.top) + "<" + document.getElementById('body').scrollHeight;
+                        if (isNaN(parseInt(document.getElementById('corpse' + score).style.top))){
+                            if (!permaWait && !wait){
+                                document.getElementById('corpse' + score).style.left =  guy.style.left = left + "px";
+                            }
+                            else{
+                                permaWait = true;
+                            }
+                            document.getElementById('corpse' + score).style.top = (fallingCounter * fallingCounter)+ "px";
+                            firstCycle = false;
+                        }
+                        else{
+                        //document.getElementById('nav-name').innerHTML = document.getElementById('body').scrollHeight - parseInt(document.getElementById('corpse' + score).style.top) + "\n" + document.getElementsByClassName('footer')[0].offsetHeight;
+                            
+                            if (parseInt(document.getElementById('corpse' + score).style.top) - (document.getElementById('corpse' + score).style.height - document.getElementsByClassName('footer')[0].offsetHeight)  < document.getElementById('body').scrollHeight){
+                                //document.getElementById('nav-name').innerHTML = document.getElementById('body').scrollHeight - parseInt(document.getElementById('corpse' + score).style.top) + "\n" + document.getElementsByClassName('footer')[0].offsetHeight;
+                                //document.getElementById('nav-name').innerHTML = document.getElementById('corpse' + score).style.left + 10;
+                                //document.getElementById('nav-name').innerHTML = document.getElementById('corpse' + score).style.top + "<" + document.getElementById('body').scrollHeight;
+                                document.getElementById('nav-name').innerHTML = "2";
+                                if (!permaWait && !wait){
+                                    document.getElementById('corpse' + score).style.left =  guy.style.left = left + "px";
+                                }
+                                else{
+                                    permaWait = true;
+                                }
+                                
+                                document.getElementById('corpse' + score).style.top = (fallingCounter * fallingCounter)+ "px";
+                                
+                                
+                            }
+                            else{
+                                fallingCounter = 0;
+                                falling = false;
+                                permaWait = false;
+                                firstCycle = true;
+                            }
+                            document.getElementById('nav-name').innerHTML = document.getElementById('corpse' + score).style.top + "\n" + document.getElementById('body').scrollHeight;
+                        }
+                    //}
+                    
+                }
+                
 
 
                 if (parseFloat(document.getElementById('character').style.opacity) < 1.0){
@@ -133,14 +199,32 @@
                     //Update image
                     guy.style.left = left + "px";
                     }
+                    document.getElementById('deathSpawner').style.left = guy.style.left;
                 }
                 
                 
             }, 33 );
 
-            function updateScore(){
+            function GFG_Fun() {
+                //<img id="character" style="position:absolute;" src="./Images/Character/M0.png" onclick="GFG_Fun()" >
+                score++;
+
+                let img = document.createElement('img');
+                img.id = 'corpse' + score;
+                img.style.position = 'absolute';
+                img.src ='./Images/Character/M0.png';
+                img.style.left = guy.style.left;
+                document.getElementById('deathSpace').appendChild(img);
+                
+                if (wait){
+                    permaWait = true;
+                }
+
                 document.getElementById('character').style.visibility = "hidden";
                 death = true;
+                falling = true;
+
+                
             }
         </script>
         
@@ -235,9 +319,8 @@
                 <br>
             </p>
         </div>
-        
-        <div class="footer">
-            <p>Sour Simian Studios 2023</p>
-        </div>
     </body>
+    <footer class="footer">
+        <p>Sour Simian Studios 2023</p>
+    </footer>
 </html>
