@@ -43,19 +43,11 @@
             //Temp vars
             trigger = false;
             
+            //TODO if permawait, corpse should not teleport to curr pos (to see bug kill while waiting about to walk)
+
             timerId = setInterval( function() { //This function is called by the browser every 33 milliseconds
-                
                 var width = document.getElementById('nav-name').offsetWidth - 64;
 
-                                
-                //document.getElementById('nav-name').innerHTML = guy.style.left + "\n" + width;
-                //document.getElementById('nav-name').innerHTML = document.getElementById('body').scrollHeight + "\n" + document.getElementsByClassName('footer')[0].offsetHeight;
-                if (document.getElementById('corpse' + score) != null){
-                    //document.getElementById('nav-name').innerHTML = typeof document.getElementById('body').scrollHeight + "\n" + typeof parseInt(document.getElementById('corpse' + score).style.top) + "\n" + typeof document.getElementsByClassName('footer')[0].offsetHeight;
-                    //document.getElementById('nav-name').innerHTML = document.getElementById('body').scrollHeight - parseInt(document.getElementById('corpse' + score).style.top) + "\n" + document.getElementsByClassName('footer')[0].offsetHeight;
-                }
-                
-                
                 if (death){
                     deathCounter++;
                     if (deathCounter > 32){
@@ -75,7 +67,6 @@
                         
                     // This can probably be improved on
                     //if (fallingCounter < 32){
-                        //document.getElementById('nav-name').innerHTML = parseInt(document.getElementById('corpse' + score).style.top) + "<" + document.getElementById('body').scrollHeight;
                         if (isNaN(parseInt(document.getElementById('corpse' + score).style.top))){
                             if (!permaWait && !wait){
                                 document.getElementById('corpse' + score).style.left =  guy.style.left = left + "px";
@@ -87,27 +78,40 @@
                             firstCycle = false;
                         }
                         else{
-                        //document.getElementById('nav-name').innerHTML = document.getElementById('body').scrollHeight - parseInt(document.getElementById('corpse' + score).style.top) + "\n" + document.getElementsByClassName('footer')[0].offsetHeight;
                             
                             if (parseInt(document.getElementById('corpse' + score).style.top) < document.getElementById('body').scrollHeight - document.getElementsByClassName('footer')[0].offsetHeight){
-                                //document.getElementById('nav-name').innerHTML = document.getElementById('body').scrollHeight - parseInt(document.getElementById('corpse' + score).style.top) + "\n" + document.getElementsByClassName('footer')[0].offsetHeight;
-                                //document.getElementById('nav-name').innerHTML = document.getElementById('corpse' + score).style.left + 10;
-                                //document.getElementById('nav-name').innerHTML = document.getElementById('corpse' + score).style.top + "<" + document.getElementById('body').scrollHeight;
-                                //document.getElementById('nav-name').innerHTML = "2";
+
                                 if (!permaWait && !wait){
                                     document.getElementById('corpse' + score).style.left =  guy.style.left = left + "px";
                                 }
                                 else{
                                     permaWait = true;
                                 }
-                                document.getElementById('nav-name').innerHTML = fallingCounter * fallingCounter + "\n" + document.getElementById('body').scrollHeight
+                                //document.getElementById('nav-name').innerHTML = fallingCounter * fallingCounter + "\n" + document.getElementById('body').scrollHeight
                                 if (fallingCounter * fallingCounter > document.getElementById('body').scrollHeight - document.getElementsByClassName('footer')[0].offsetHeight){
                                     //document.getElementById('nav-name').innerHTML = document.getElementById('corpse' + score).clientHeight / 2;
                                     fallingCounter = 0;
                                     falling = false;
                                     permaWait = false;
                                     firstCycle = true;
-                                    document.getElementById('corpse' + score).style.top = document.getElementById('body').scrollHeight - document.getElementsByClassName('footer')[0].offsetHeight + "px";
+                                    
+                                    //document.getElementById('corpse' + score).src = './Images/Character/D1.png';
+                                    document.getElementById('corpse' + score).style.visibility = "hidden";
+                                    
+                                    let img = document.createElement('img');
+                                    img.id = 'corpse' + (score);
+                                    //img.classList.add('corpses');
+                                    img.style.position = 'absolute';
+                                    img.src ='./Images/Character/D1.png';
+                                    if (!right){
+                                        img.style.transform = "scaleX(-1)";
+                                    }
+                                    img.style.left = guy.style.left;
+                                    
+                                    
+                                    document.getElementById('text-main').appendChild(img);
+
+                                    //document.getElementById('corpse' + score).style.top = document.getElementById('body').scrollHeight - document.getElementsByClassName('footer')[0].offsetHeight + "px";
                                 }
                                 else{
                                     document.getElementById('corpse' + score).style.top = (fallingCounter * fallingCounter)+ "px";
@@ -118,6 +122,7 @@
                     //}
                     
                 }
+
                 
 
 
@@ -214,7 +219,7 @@
                 let img = document.createElement('img');
                 img.id = 'corpse' + score;
                 img.style.position = 'absolute';
-                img.src ='./Images/Character/M0.png';
+                img.src ='./Images/Character/D0.png';
                 img.style.left = guy.style.left;
                 document.getElementById('deathSpace').appendChild(img);
                 
@@ -226,7 +231,9 @@
                 death = true;
                 falling = true;
 
-                
+                punch1 = new Audio('./sfx/punch-1.mp3');
+                punch1.volume = 0.2;
+                punch1.play();
             }
         </script>
         
@@ -285,10 +292,10 @@
         <!--Main-->
         <div class="main border">
             <h1>Home</h1>
-            <p class="text-center">Welcome home. Take your shoes off and stay awhile.</p>
+            <p class="text-center">temp.</p>
             <h1 class="text-space">About Me</h1>
             <img id="profile" src="./Images/Headshot 1.jpeg" alt="Selfie">
-            <p class="text">
+            <p id="text-main" class="text">
                 My name is Mac Burton. 
                 <br><br>
                 I am a New Grad who recieved a Bachelors of Computer Science 
