@@ -62,7 +62,7 @@
                         deathCounter = 0;
                         death = false;
                         opacityFade = true;
-                        respawnSfx = new Audio('./sfx/respawn/respawn-1.mp3');
+                        respawnSfx = new Audio('./sfx/Respawn/respawn-1.mp3');
                         respawnSfx.volume = 0.05;
                         respawnSfx.play();
                     }
@@ -98,7 +98,7 @@
                                 }
                                 //document.getElementById('nav-name').innerHTML = fallingCounter * fallingCounter + "\n" + document.getElementById('body').scrollHeight
                                 if (fallingCounter * fallingCounter > document.getElementById('body').scrollHeight - document.getElementsByClassName('footer')[0].offsetHeight){
-                                    smackSfx = new Audio('./sfx/smacks/smack-2.mp3');
+                                    smackSfx = new Audio('./sfx/Smacks/smack-2.mp3');
                                     smackSfx.volume = 0.2;
                                     smackSfx.play();
                                     
@@ -251,11 +251,11 @@
                 death = true;
                 falling = true;
 
-                punchSfx = new Audio('./sfx/punches/punch-1.mp3');
+                punchSfx = new Audio('./sfx/Punches/punch-1.mp3');
                 punchSfx.volume = 0.2;
                 punchSfx.play();
 
-                screamSfx = new Audio('./sfx/screams/scream-' + getRandomInt(1,3) + '.mp3');
+                screamSfx = new Audio('./sfx/Screams/scream-' + getRandomInt(1,3) + '.mp3');
                 screamSfx.volume = 0.2;
                 screamSfx.play();
                 
