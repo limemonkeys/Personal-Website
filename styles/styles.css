@@ -481,3 +481,10 @@ Relevancy: All
     margin-top: 16px;
     right: 32px;
 }
+
+#cleanScore{
+    color: #EDF5E1;
+    position: absolute; 
+    margin-top: 48px;
+    right: 32px;
+}
