@@ -10,13 +10,14 @@
         <!--<script src="functions.js"></script>-->
     </head>
     <body id="body">
+        <div id="deathSpace" style="position:absolute;">
+            <img src="./Images/Signs/S1.png" style="position:absolute; padding-top: 4px;">
+        </div>
         <img id="character" style="position:absolute;" src="./Images/Character/M0.png" onclick="GFG_Fun()" >
         <div id="deathSpawner" style="position:absolute;">
             
         </div>
-        <div id="deathSpace" style="position:absolute;">
-            
-        </div>
+        
         <img id="character-space" style="visibility: hidden;" src="./Images/Character/M0.png" onclick="GFG_Fun()">
         <script type="text/javascript">
             document.getElementById('character').style.transform = "scale(1)";
@@ -274,6 +275,7 @@
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
         </script>
+
         <div>
             <img id="killIcon" src="./Images/Character/D0.png" alt="Death Icon">
             <h2 id="killScore">0</h2>
@@ -373,6 +375,10 @@
                 at Canadian Forces Base Borden in Ontario.
                 <br>
             </p>
+            <p id="text-main" class="text">
+                
+            </p>
+            <img src="./Images/Signs/S2.png" style="position: absolute; left: 100px; ">
         </div>
     </body>
     <footer class="footer">
