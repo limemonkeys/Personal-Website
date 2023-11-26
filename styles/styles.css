@@ -503,7 +503,11 @@ Relevancy: All
     width: 32px;
 }
 
-
+#cleanSign{
+    position: absolute;
+    left: 32px;
+    padding-top: 24px;
+}
 
 /*
 Mobile View Specific Changes
