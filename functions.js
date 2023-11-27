@@ -10,6 +10,8 @@ taken the time to make this dynamic. I'd rather spend my time on other projects.
 Initialization of variables and overlays
 */
 var slideIndex = 1;
+
+/*
 showSlidesEntangled(slideIndex);
 showSlidesOBTWGS(slideIndex);
 showSlidesPatientZero(slideIndex);
@@ -20,7 +22,7 @@ showSlidesCurseoftheLowEffortLake(slideIndex);
 showSlidesDalhousieAccessibilityWeekVisualNovel(slideIndex);
 showSlidesBoatleRoyale(slideIndex);
 showSlidesDalhousieFitnessHallApplication(slideIndex);
-
+*/
 
 /*
 Functions used to pass incremented or decremented index to showSlides. 
@@ -78,6 +80,8 @@ function showSlidesOBTWGS(n) {
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
+  console.log("before1");
+  console.log(slides.length);
   slides[slideIndex-1].style.display = "block";
 }
 
@@ -89,6 +93,8 @@ function showSlidesEntangled(n) {
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
+  console.log("before2");
+  console.log(slides.length);
   slides[slideIndex-1].style.display = "block";
 }
 
