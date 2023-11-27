@@ -132,6 +132,8 @@
                                             bellSfx.volume = 0.2;
                                             bellSfx.play();
                                             img.src ='./Images/Tombstones/tomb-' + getRandomInt(1,3) + '.png';
+                                            // Should be able to use this instead of the if check. Try moving image to back instead/moving bodies forward
+                                            //img.onclick = null;
                                         }
                                     };
                                     
@@ -340,29 +342,11 @@
         <!--Main-->
         <div class="main">
             <div class="border">
-                <h1>Resume</h1>
+                <h1>Game Only Testing Only</h1>
 
-                <div>
-                    <div id="resume-container-tabs" class="row">
-                        <a id="general-resume" class="col-6 resume-container-tab" onclick="opengeneral()">
-                            <div class="">
-                                General
-                            </div>
-                        </a>
-                        <a class="col-6 resume-container-tab" href="./index.html">
-                            <div class="">
-                                Game Dev
-                            </div>
-                        </a>
-                        <a class="hidden col-2 resume-container-tab" href="./index.html">
-                            <div class="">
-                                Rest
-                            </div>
-                        </a>
-                    </div>
-                    <embed id="resume-container" src="./Resumes/Mac Burton Resume.pdf" width="800px" height="1050px" />
-                
-                </div>
+                <p class="hidden text">
+                    I am the one who starts.
+                </p>
                 <img id="cleanSign" src="./Images/Signs/S2.png">
                 <p id="text-main" class="text">
                     I am the one who stops.
