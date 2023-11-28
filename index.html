@@ -10,6 +10,8 @@
         <!--<script src="functions.js"></script>-->
     </head>
     <body id="body">
+
+        
         <div id="deathSpace" style="position:absolute;">
             <img src="./Images/Signs/S1.png" style="position:absolute; padding-top: 4px;">
         </div>
@@ -19,6 +21,8 @@
         </div>
         
         <img id="character-space" style="visibility: hidden;" src="./Images/Character/M0.png" onclick="GFG_Fun()">
+        
+        
         <script type="text/javascript">
             document.getElementById('character').style.transform = "scale(1)";
 
@@ -43,6 +47,22 @@
             firstCycle = true;
 
             
+            //console.log("product: " + product[0]);
+            
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            console.log(urlParams);
+            if (urlParams.size > 0){
+                const killScoreURL = urlParams.get('k');
+                score = killScoreURL;
+                console.log(score);
+                
+
+                const cleanScoreURL = urlParams.get('c');
+                cleanScore = cleanScoreURL;
+                console.log(cleanScore);
+                
+            }
             
             //Temp vars
             trigger = false;
@@ -50,6 +70,9 @@
             //TODO if permawait, corpse should not teleport to curr pos (to see bug kill while waiting about to walk)
 
             timerId = setInterval( function() { //This function is called by the browser every 33 milliseconds
+                updateLinks();
+                document.getElementById("killScore").innerHTML = score;
+                document.getElementById("cleanScore").innerHTML = cleanScore;
                 var width = document.getElementById('nav-name').offsetWidth - 64;
 
                 if (death){
@@ -127,6 +150,7 @@
                                         imageName = imageNameSplit[imageNameSplit.length - 1]
                                         if (!(imageName == 'tomb-1.png' || imageName == 'tomb-2.png' || imageName == 'tomb-3.png')){
                                             cleanScore++;
+                                            updateLinks();
                                             document.getElementById("cleanScore").innerHTML = cleanScore;
                                             bellSfx = new Audio('./sfx/Bells/bell-' + getRandomInt(1,3) + '.mp3');
                                             bellSfx.volume = 0.2;
@@ -243,6 +267,7 @@
             function GFG_Fun() {
                 //<img id="character" style="position:absolute;" src="./Images/Character/M0.png" onclick="GFG_Fun()" >
                 score++;
+                updateLinks();
                 document.getElementById("killScore").innerHTML = score;
                 let img = document.createElement('img');
                 img.id = 'corpse' + score;
@@ -269,6 +294,12 @@
                 
             }
 
+            function updateLinks(){
+                document.getElementById("nav-index").setAttribute("href", "./index.html?k=" + score + "&c=" + cleanScore);
+                document.getElementById("nav-portfolio").setAttribute("href", "./portfolio.html?k=" + score + "&c=" + cleanScore);
+                document.getElementById("nav-resume").setAttribute("href", "./resume.html?k=" + score + "&c=" + cleanScore);
+            }
+
             function getRandomInt(min, max) {
                 min = Math.ceil(min);
                 max = Math.floor(max);
@@ -278,11 +309,11 @@
 
         <div>
             <img id="killIcon" src="./Images/Character/D0.png" alt="Death Icon">
-            <h2 id="killScore">0</h2>
+            <h2 id="killScore"></h2>
         </div>
         <div>
             <img id="cleanIcon" src="./Images/Tombstones/tomb-1.png" alt="Tombstone Icon">
-            <h2 id="cleanScore">0</h2>
+            <h2 id="cleanScore"></h2>
         </div>
         
         <h1 id="nav-name">MAC BURTON</h1>
@@ -317,17 +348,17 @@
             </div>
         </div>
         <div class="row">
-            <a class="col-3" href="./index.html">
+            <a id="nav-index" class="col-3" href="./index.html">
                 <div class="nav-page">
                     Home
                 </div>
             </a> 
-            <a class="col-3" href="./portfolio.html">
+            <a id="nav-portfolio" class="col-3" href="./portfolio.html">
                 <div class="nav-page">
                     Portfolio
                 </div>
             </a>
-            <a class="col-3" href="./resume.html">
+            <a id="nav-resume" class="col-3" href='./resume.html'>
                 <div class="nav-page">
                     Resume
                 </div>

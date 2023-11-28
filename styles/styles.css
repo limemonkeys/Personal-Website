@@ -130,6 +130,7 @@ Relevancy: All
 }
 
 .border{
+    /* THIS DOESN'T WORK ON CHROME. ACCENT COLOR APPEARS BLACK. CURSE YOU CHROME!!! */
     border: 16px ridge #05386B;
     background-color: #054b92;
     border-radius: 25px;
@@ -521,12 +522,12 @@ Relevancy: All
     color: #EDF5E1;
     position: absolute; 
     margin-top: 16px;
-    right: 32px;
+    right: 24px;
 }
 #killIcon{
     position: absolute; 
     margin-top: 14px;
-    right: 48px;
+    right: 56px;
     width: 32px;
 }
 
@@ -534,13 +535,13 @@ Relevancy: All
     color: #EDF5E1;
     position: absolute; 
     margin-top: 48px;
-    right: 32px;
+    right: 24px;
 }
 
 #cleanIcon{
     position: absolute; 
     margin-top: 52px;
-    right: 48px;
+    right: 56px;
     width: 32px;
 }
 
