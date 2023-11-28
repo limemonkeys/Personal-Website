@@ -286,7 +286,8 @@ Relevancy: All
 }
 
 #resume-container {
-    width: 800px;
+    width: 80%;
+    height: 1050px;
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
     border-top-right-radius: 32px;
@@ -298,8 +299,8 @@ Relevancy: All
 }
 
 #resume-container-tabs {
-    width: 800px;
-
+    width: 80%;
+    
     
     /* fix for safari rounded corners */
     position: relative;
@@ -580,5 +581,9 @@ Mobile View Specific Changes
         padding-top: 22px;
         margin-top: 5px;
         margin-bottom: 5px;
+    }
+
+    #resume-container {
+        height: 420px;
     }
 }

@@ -53,12 +53,12 @@
             console.log(urlParams);
             if (urlParams.size > 0){
                 const killScoreURL = urlParams.get('k');
-                score = killScoreURL[0];
+                score = killScoreURL;
                 console.log(score);
                 
 
                 const cleanScoreURL = urlParams.get('c');
-                cleanScore = cleanScoreURL[0];
+                cleanScore = cleanScoreURL;
                 console.log(cleanScore);
                 
             }
@@ -390,7 +390,7 @@
                             </div>
                         </a>
                     </div>
-                    <embed id="resume-container" src="./Resumes/Mac Burton Resume.pdf" width="800px" height="1050px" />
+                    <embed id="resume-container" src="./Resumes/Mac Burton Resume.pdf"  />
                 
                 </div>
                 <img id="cleanSign" src="./Images/Signs/S2.png">
