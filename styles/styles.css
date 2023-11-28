@@ -331,6 +331,18 @@ Relevancy: All
     color: rgba(0,0,0,0);
 }
 
+#download-resume:link{
+    color:#6394C5;
+}
+
+#download-resume:visited{
+    color:#6394C5;
+}
+
+#download-resume:active{
+    color:#427ab3;
+}
+
 #border-inner-date{
     background-color: #427ab3;
     border-radius: 25px;
@@ -553,6 +565,18 @@ Relevancy: All
     position: absolute;
     left: 32px;
     padding-top: 0px;
+}
+
+#nav-index{
+    text-decoration: none;
+}
+
+#nav-portfolio{
+    text-decoration: none;
+}
+
+#nav-resume{
+    text-decoration: none;
 }
 
 /*

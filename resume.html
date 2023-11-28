@@ -9,6 +9,7 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <!--<script src="functions.js"></script>-->
         <!--<script src="scoreManager.js"></script>-->
+        <!--<script src="resumeswitch.js"></script>-->
     </head>
     <body id="body">
 
@@ -375,26 +376,26 @@
                 <h1>Resume</h1>
 
                 <div>
-                    <p class="text">You should see a resume below. If you don't, your web browser doesn't
+                    <p  class="text ">You should see a resume below. If you don't, your web browser doesn't
                         have a PDF plugin. Instead you can 
-                        <a href="./Resumes/Mac Burton Resume.pdf">click here to download a PDF File of my resume.</a>
+                        <a id="download-resume" href="./Resumes/Mac Burton Resume.pdf">click here to download a PDF File of my resume.</a>
                     </p>
                     <div id="resume-container-tabs" class="row">
-                        <a id="general-resume" class="col-6 resume-container-tab" onclick="opengeneral()">
+                        <div id="general-resume" class="col-6 resume-container-tab">
                             <div class="">
-                                General
+                                Resume
                             </div>
-                        </a>
-                        <a class="col-6 resume-container-tab" href="./index.html">
+                        </div>
+                        <div class="hidden col-6 resume-container-tab" href="./index.html">
                             <div class="">
                                 Game Dev
                             </div>
-                        </a>
-                        <a class="hidden col-2 resume-container-tab" href="./index.html">
+                        </div>
+                        <div class="hidden col-2 resume-container-tab" href="./index.html">
                             <div class="">
                                 Rest
                             </div>
-                        </a>
+                        </div>
                     </div>
                     
                     <object id="resume-container" data="./Resumes/Mac Burton Resume.pdf" type="application/pdf" width="100%" height="100%">
