@@ -196,7 +196,6 @@ Relevancy: All
 
 
 .portfolioPics{
-
     border: 6px solid #05386B;
 }
 
@@ -321,6 +320,11 @@ Relevancy: All
     border-top-left-radius: 32px;
     border-top-right-radius: 32px;
     
+}
+
+#resume-text{
+    margin: 0px;
+    padding: 0px;
 }
 
 .hidden{
@@ -614,5 +618,32 @@ Mobile View Specific Changes
 
     #resume-container {
         height: 420px;
+    }
+
+    #resume-text{
+        font-size: 12px;
+    }
+
+    .resume-container-tab {
+        background-color: #05386B;
+        text-align: center;
+        height: 20px;
+        margin-top: 0px;
+        padding-top: 8px;
+        
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        
+        /* Manual override to col-3 */
+        flex: 33.3%;
+    }
+
+    .footer{
+        font-size: 12px;
+    }
+
+    .portfolioPics{
+        max-width: 200px;
+        border: 6px solid #05386B;
     }
 }
