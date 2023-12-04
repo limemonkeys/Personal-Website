@@ -314,8 +314,13 @@ Relevancy: All
     
 }
 
+iframe {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
 .resume-container-tab {
-    color: #EDF5E1;
     background-color: #05386B;
     text-align: center;
     font-size: 20px;
