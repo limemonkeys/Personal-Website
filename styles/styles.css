@@ -112,6 +112,11 @@ body {
     font-family: "Fredoka One", sans-serif;
 }
 
+iframe {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
 
 /*
 Section: Main
@@ -618,7 +623,10 @@ Mobile View Specific Changes
 
     #resume-container {
         height: 420px;
+        
     }
+
+    
 
     #resume-text{
         font-size: 12px;
