@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>My Website</title>
+        <title>Mac's Website - Home</title>
+        <link rel="icon" href="./Images/Character/D0.png">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka One">
         <link rel="stylesheet" href="styles/styles.css">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -136,7 +137,6 @@
                                     
                                     landed = true;
 
-                                    //document.getElementById('corpse' + score).src = './Images/Character/D1.png';
                                     document.getElementById('corpse' + score).style.visibility = "hidden";
                                     
                                     let img = document.createElement('img');
@@ -147,6 +147,7 @@
                                     if (!right){
                                         img.style.transform = "scaleX(-1)";
                                     }
+                                    // Controls where the corpse lands. Putting an if check breaks it here...
                                     img.style.left = guy.style.left;
                                     img.onclick = function() { 
                                         
