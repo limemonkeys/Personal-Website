@@ -46,6 +46,7 @@
             fallingCounter = 0;
             permaWait = false;
             firstCycle = true;
+            landed = false;
 
             
             //console.log("product: " + product[0]);
@@ -72,18 +73,19 @@
 
             timerId = setInterval( function() { //This function is called by the browser every 33 milliseconds
                 updateLinks();
+                //document.getElementById('nav-name').innerHTML = "" + landed;
                 document.getElementById("killScore").innerHTML = score;
                 document.getElementById("cleanScore").innerHTML = cleanScore;
                 var width = document.getElementById('nav-name').offsetWidth - 64;
 
                 if (death){
                     deathCounter++;
-                    
-                    if (deathCounter > 32){
+                    if (landed){
                         document.getElementById('character').style.opacity = "0.0";
                         document.getElementById('character').style.visibility = "visible";
                         //document.getElementById("killScore").innerHTML = deathCounter;
                         
+                        landed=false;
                         deathCounter = 0;
                         death = false;
                         opacityFade = true;
@@ -133,6 +135,8 @@
                                     permaWait = false;
                                     firstCycle = true;
                                     
+                                    landed = true;
+
                                     //document.getElementById('corpse' + score).src = './Images/Character/D1.png';
                                     document.getElementById('corpse' + score).style.visibility = "hidden";
                                     
