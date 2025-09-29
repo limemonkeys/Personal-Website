@@ -1,0 +1,473 @@
+.row {
+  display: flex;
+}
+
+.col-1 {
+  flex: 100%;
+  padding: 5px;
+}
+
+.col-twothirds{
+  flex: 66.6%;
+  padding: 5px;
+}
+
+.col-2 {
+  flex: 50%;
+  padding: 5px;
+}
+
+.col-3 {
+  flex: 33.3%;
+  padding: 5px;
+}
+
+.col-4 {
+  flex: 25%;
+  padding: 5px;
+}
+
+.col-5 {
+  flex: 20%;
+  padding: 5px;
+}
+
+.col-6 {
+  flex: 16.66%;
+  padding: 5px;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+
+  font-family: 'Highway Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+
+  color: #ffffff;
+  background-color: #037046;
+
+  border: 5px solid #ffffff;
+  box-shadow: 0 0 0 5px #04AA6D;
+
+  border-radius: 10px;
+
+  margin-bottom: 15px;
+}
+
+#plateContainer{
+  position: relative;
+  height: 50vh;
+}
+
+body{
+  background-color: #000000;
+  
+  background-image: url("../img/platle/asphalt 2.png");
+}
+
+.brightness{
+  filter: brightness(20%);
+
+}
+
+.stopScrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+#helpcontent{
+  z-index: 6;
+
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  width: fit-content;
+
+  margin: 0 auto 0 auto;
+
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  color: #ffffff;
+  background-color: #04AA6D;
+
+  border: 5px solid #ffffff;
+  box-shadow: 0 0 0 5px #04AA6D;
+
+  border-radius: 10px;
+
+  width: 80vw;
+  height: 60vh;
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.invisible{
+  opacity: 0;
+}
+
+#results{
+  padding-bottom:64px;
+}
+
+#helpcontent li{
+  font-family: 'Highway Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 1.75em;  
+}
+
+#helpcontent button{
+  font-family: 'Highway Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 2em;  
+  color: #fff;
+
+
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  width: fit-content;
+
+  margin: 0 auto 0 auto;
+
+  top: 90%;
+  -ms-transform: translateY(-80%);
+  transform: translateY(-80%);
+
+  background-color: #04AA6D;
+  border: 6px solid #ffffff;
+  border-radius: 10px;
+
+  width: 256px;
+  height: 64px;
+}
+
+#plate{
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  width: fit-content;
+
+  margin: 0 auto 0 auto;
+
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.digits{
+
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  width: fit-content;
+
+  margin: 0 auto 0 auto;
+
+  
+
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.digits input{
+  height: 128px; 
+  width: 72px;
+
+  font-family: 'Highway Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 6em;
+  text-transform: uppercase;
+
+  color: #0B2875;
+  background: transparent;
+  border-style: dashed;
+  border-color: #0B2875;
+
+  text-align: center;
+
+  object-fit: cover;
+
+  padding: 0;
+}
+
+#digit3{
+  margin-right: 64px;
+}
+
+
+
+.collapsible{
+  font-family: 'Highway Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+
+  color: #ffffff;
+  background-color: #04AA6D;
+
+  border: 5px solid #ffffff;
+  box-shadow: 0 0 0 5px #04AA6D;
+
+  border-radius: 10px;
+
+  margin-bottom: 15px;
+}
+
+.collapsible:hover{
+  font-family: 'Highway Gothic', sans-serif;
+
+  color: #ffffff;
+  background-color: #037046;
+  
+  border: 5px solid #ffffff;
+  box-shadow: 0 0 0 5px #04AA6D;
+
+  border-radius: 10px;
+
+  margin-bottom: 15px;
+}
+
+#searchButton{
+
+  height: 128px;
+  width: 128px;
+
+
+
+  position: absolute; 
+  left: 0; 
+  right: 224px; 
+  
+
+  margin: 0 auto 0 auto;
+
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  object-fit: cover;
+  
+}
+
+#searchButtonText{
+
+  height: 128px;
+  width: 128px;
+
+  z-index: 5;
+
+  font-family: 'Highway Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #FFF;
+
+  text-align: center;
+  
+  margin: 0 auto 0 auto;
+
+  top: calc(50% + 2em);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  position: absolute; 
+  left: 0; 
+  right: 224px; 
+
+  object-fit: cover;
+
+  /*
+  z-index: 5;
+
+  position: absolute; 
+  left: 0; 
+  right: 224px; 
+  width: fit-content;
+
+  font-family: 'Highway Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+
+  color: #FFF;
+
+  margin: 0 auto 0 auto;
+
+  top: calc(50% - 0.20em);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  */
+  
+}
+
+#help{
+  height: 64px;
+
+  position: absolute; 
+  left: 256px; 
+  right: 0; 
+  width: fit-content;
+
+  margin: 0 auto 0 auto;
+
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#sound{
+  height: 64px;
+  
+  position: absolute; 
+  left: 64px; 
+  right: 0; 
+  width: fit-content;
+
+  margin: 0 auto 0 auto;
+
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#errorContent{
+  font-family: 'Highway Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+
+  color: #ffffff;
+  background-color: #DC0005;
+
+  border: 5px solid #ffffff;
+  box-shadow: 0 0 0 5px #DC0005;
+
+  border-radius: 10px;
+
+  display: flex; 
+  align-items: center;
+  
+}
+
+#wrongway{
+  padding: 0 8px 0 8px;
+  
+}
+
+#interactables{
+  position: relative;
+  height: 30vh;
+  min-height: 144px;
+}
+
+#footer{
+  z-index: 10;
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+
+  font-family: "Fredoka One", sans-serif;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+  text-align: center;
+  z-index: 6;
+  background-image: url("../img/background-texture/footrock.png");
+  
+}
+
+#footer p{
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+@media screen and (max-width: 800px){
+
+  #footer{
+    height: 64px;
+    position: fixed; 
+    bottom: 0;
+
+    text-align: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+
+    font-size: 0.75rem;
+    color: black;
+    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+    background-image: url("../img/background-texture/footrock.png");
+  }
+
+  #footer p{
+    display: block;
+  }
+
+  #footer #spacing{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 650px){
+
+  #helpcontent li{
+    font-size: 1.5em;  
+  }
+
+  #plateContainer{
+    height: 30vh;
+  }
+
+  #plate{
+    
+    width: 80vw;
+    height: auto;
+  }
+
+  .digits input{
+    height: 80px; 
+    width: calc((60vw - 16px)/6);
+  
+    font-family: 'Highway Gothic', sans-serif;
+    font-weight: bold;
+    font-size: 3em;
+    text-transform: uppercase;
+  
+    color: #0B2875;
+    background: transparent;
+    border-style: dashed;
+    border-color: #0B2875;
+  
+    text-align: center;
+
+    
+  }
+
+  #digit3{
+    margin-right: 16px;
+  }
+}
